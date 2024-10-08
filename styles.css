@@ -15,6 +15,9 @@ header {
     font-size: 2em;
     font-weight: bold;
     margin-bottom: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }
 
 nav {
@@ -22,9 +25,10 @@ nav {
     width: 200px;
     height: 100%;
     position: fixed;
-    top: 0;
+    top: 60px; /* 与标题栏保持一定距离 */
     left: 0;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 5;
 }
 
 nav > header {
@@ -74,7 +78,7 @@ section {
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 40px; /* 留出空间给大标题 */
+    margin-top: 80px; /* 留出空间给大标题和导航栏 */
 }
 
 table {
@@ -108,16 +112,6 @@ tr:nth-child(odd) {
     background-color: #ffffff;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
-    position: relative;
-    width: 100%;
-}
-
 citation {
     margin: 20px;
     text-align: left;
@@ -148,6 +142,6 @@ citation {
 
     section {
         margin-left: 0;
-        margin-top: 20px; /* 调整为适应小屏幕 */
+        margin-top: 60px; /* 调整为适应小屏幕 */
     }
 }
