@@ -1,4 +1,4 @@
-// 简单的JavaScript脚本，用于处理导航栏的激活状态
+// 将此JS文件包含在每个HTML文件中
 window.onload = function () {
     const links = document.querySelectorAll('nav ul li a');
     const sections = document.querySelectorAll('section');
