@@ -1,0 +1,193 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.header-container {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #cc0000; /* 北大红 */
+    color: white;
+    font-size: 2em; /* 调大大标题字体 */
+    font-weight: bold;
+    padding: 20px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    white-space: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    background: none;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 0;
+    width: 100%;
+}
+
+nav {
+    background-color: #ffffff; /* 白色背景 */
+    width: 120px;
+    position: fixed;
+    top: 100px; /* 导航栏下降，增加与标题的距离 */
+    left: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    padding: 20px; /* 留出空间 */
+    height: calc(100% - 120px); /* 减去头部的高度 */
+    overflow-y: auto; /* 超出部分可滚动 */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+nav ul li {
+    padding: 15px 0; /* 调大导航栏的行高 */
+    text-align: center;
+    width: 100%;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    font-size: 1.2em; /* 调大导航栏字体 */
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f0f0f0;
+    background-color: #333;
+}
+
+nav ul li a.active {
+    color: #cc0000;
+    background-color: #e0e0e0;
+}
+
+section {
+    padding: 20px;
+    margin-left: 210px; /* 为左侧导航栏留出空间 */
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 160px; /* 留出空间给大标题和导航栏 */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 设置表格边框为 collapse，使表格边框合并为一个单一边框 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* 定义 th 和 td 的边框样式 */
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd; /* 设置单元格边框样式 */
+    text-align: left;
+}
+
+th:nth-child(n), td:nth-child(n) {
+    width: 100px; /* 您可以根据需要调整这个值 */
+}
+
+/* 特定设置表头第一行的背景色为绿色 */
+thead tr:first-child th {
+    background-color: #ffcccb; 
+    color: black;
+}
+
+
+th:nth-child(odd) {
+    background-color: #d8b2d8; /* 浅紫色 */
+    color: bla;
+}
+
+/* 为表头的偶数列设置深紫色背景 */
+th:nth-child(even) {
+    background-color: rgb(170,191,150); /* 深紫色 */
+    color: black;
+}
+
+/* 为奇数行和偶数行设置不同的背景颜色，增加可读性 */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* 突出显示样式 */
+.bold {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+
+
+citation {
+    margin: 20px;
+    text-align: left;
+    font-style: italic;
+    color: #666;
+    clear: both; /* Ensure citation is below the nav */
+    position: absolute;
+    left: 200px;
+    z-index: 50;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+
+    section {
+        margin-left: 0;
+        margin-top: 160px; /* 调整为适应小屏幕 */
+    }
+
+    citation {
+        position: absolute;
+        width: auto;
+        left: 0;
+    }
+}
