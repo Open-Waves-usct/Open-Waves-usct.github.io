@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenWaves</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">OpenWaves</a></li>
+            <li><a href="#datasets">Datasets</a></li>
+            <li><a href="#benchmark">Benchmark</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+    </nav>
+    
+    <section id="home">
+        <h1>Welcome to OpenWaves</h1>
+        <p>A large-scale anatomically realistic Ultrasound-CT dataset for benchmarking neural wave equation solvers.</p>
+    </section>
+    
+    <section id="datasets">
+        <h2>Datasets</h2>
+        <table>
+            <tr>
+                <th>Breast Type</th>
+                <th>Frequency (kHz)</th>
+                <th>#Train/#Test</th>
+                <th># Source</th>
+                <th>Storage</th>
+            </tr>
+            <tr>
+                <td>Heterogeneous (HET)</td>
+                <td>300~650</td>
+                <td>900/100</td>
+                <td>256</td>
+                <td>3.6TB</td>
+            </tr>
+            <tr>
+                <td>Fibroglandular (FIB)</td>
+                <td>300~650</td>
+                <td>2700/300</td>
+                <td>256</td>
+                <td>10.8TB</td>
+            </tr>
+            <tr>
+                <td>Fatty (FAT)</td>
+                <td>300~650</td>
+                <td>1800/200</td>
+                <td>256</td>
+                <td>7.2TB</td>
+            </tr>
+            <tr>
+                <td>Extremely dense (EXD)</td>
+                <td>300~650</td>
+                <td>1800/200</td>
+                <td>256</td>
+                <td>7.2TB</td>
+            </tr>
+        </table>
+    </section>
+    
+    <section id="benchmark">
+        <h2>Benchmark</h2>
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>RRMSE</th>
+                <th>Max Error</th>
+            </tr>
+            <tr>
+                <td>UNet</td>
+                <td>0.1236</td>
+                <td>0.2551</td>
+            </tr>
+            <tr>
+                <td>FNO</td>
+                <td>0.0269</td>
+                <td>0.0617</td>
+            </tr>
+            <tr>
+                <td>AFNO</td>
+                <td>0.0165</td>
+                <td>0.0293</td>
+            </tr>
+            <tr>
+                <td>BFNO</td>
+                <td>0.0113</td>
+                <td>0.0519</td>
+            </tr>
+            <tr>
+                <td>MgNO</td>
+                <td>0.0028</td>
+                <td>0.0092</td>
+            </tr>
+        </table>
+    </section>
+    
+    <section id="resources">
+        <h2>Resources</h2>
+        <p>The dataset and baselines can be accessed via the following links:</p>
+        <ul>
+            <li><a href="#">OpenWaves Dataset</a></li>
+            <li><a href="#">UNet Baseline</a></li>
+            <li><a href="#">FNO Baseline</a></li>
+            <li><a href="#">BFNO Baseline</a></li>
+            <li><a href="#">AFNO Baseline</a></li>
+            <li><a href="#">MgNO Baseline</a></li>
+        </ul>
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
