@@ -4,71 +4,95 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    background-color: #f9f9f9;
 }
 
 nav {
     background-color: #cc0000; /* 北大红 */
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav > header {
+    text-align: center;
+    padding: 10px;
+    background-color: #880000; /* 深色红 */
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    display: flex;
     margin: 0;
+    width: 100%;
 }
 
 nav ul li {
-    padding: 0 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #fff;
+    text-align: center;
+    width: 100%;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    display: block;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ddd;
+    background-color: #990000;
 }
 
 nav ul li a.active {
-    color: #ffff00; /* 导航高亮颜色 */
+    background-color: #880000;
 }
 
 section {
     padding: 20px;
-    margin: 20px;
-    background: #f9f9f9;
+    margin-left: 210px; /* 为左侧导航栏留出空间 */
+    background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    border: 1px solid #ddd;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
+table thead {
+    background-color: #e7e7e7;
+    color: #333;
 }
 
 th, td {
     padding: 10px;
     text-align: left;
+    border: 1px solid #ddd;
 }
 
 th {
-    background-color: #e7e7e7;
+    background-color: #cc0000; /* 北大红 */
+    color: white;
 }
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
 }
 
 footer {
@@ -83,6 +107,16 @@ footer {
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+    nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    nav > header {
+        text-align: left;
+    }
+
     nav ul {
         flex-direction: column;
         align-items: center;
@@ -93,6 +127,6 @@ footer {
     }
 
     section {
-        margin: 10px;
+        margin-left: 0;
     }
 }
