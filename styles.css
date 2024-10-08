@@ -15,7 +15,7 @@ header {
     font-size: 2em;
     font-weight: bold;
     margin-bottom: 20px;
-    position: fixed;
+    position: relative;
     width: 100%;
     z-index: 10;
 }
@@ -23,12 +23,14 @@ header {
 nav {
     background-color: #ffffff; /* 白色背景 */
     width: 200px;
-    height: 100%;
+    height: calc(100% - 80px); /* 减去头部的高度 */
     position: fixed;
-    top: 60px; /* 与标题栏保持一定距离 */
+    top: 60px; /* 大标题的高度 */
     left: 0;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     z-index: 5;
+    padding-top: 20px; /* 留出空间 */
+    overflow-y: auto; /* 超出部分可滚动 */
 }
 
 nav > header {
