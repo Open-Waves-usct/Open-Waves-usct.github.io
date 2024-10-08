@@ -7,18 +7,26 @@ body {
     background-color: #f9f9f9;
 }
 
-header {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #cc0000; /* 北大红 */
-    color: white;
-    font-size: 2em;
-    font-weight: bold;
+.header-container {
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
+}
+
+header {
+    background-color: #cc0000; /* 北大红 */
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 20px 20px; /* Adjusted padding to accommodate text */
+    text-align: left;
+    width: calc(100% - 40px); /* Subtract the left and right padding */
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 nav {
@@ -120,10 +128,6 @@ citation {
         height: auto;
     }
 
-    nav > header {
-        text-align: left;
-    }
-
     nav ul {
         flex-direction: column;
         align-items: center;
@@ -135,6 +139,4 @@ citation {
 
     section {
         margin-left: 0;
-        margin-top: 120px; /* 调整为适应小屏幕 */
-    }
-}
+        margin-top: 120px;
