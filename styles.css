@@ -14,33 +14,20 @@ header {
     color: white;
     font-size: 2em;
     font-weight: bold;
-    margin-bottom: 20px;
-    position: relative;
     width: 100%;
-    z-index: 10;
+    position: fixed;
+    z-index: 1000;
 }
 
 nav {
     background-color: #ffffff; /* 白色背景 */
     width: 200px;
-    height: calc(100% - 80px); /* 减去头部的高度 */
     position: fixed;
-    top: 60px; /* 大标题的高度 */
+    top: 80px; /* 大标题的高度 */
     left: 0;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    z-index: 5;
+    z-index: 100;
     padding-top: 20px; /* 留出空间 */
-    overflow-y: auto; /* 超出部分可滚动 */
-}
-
-nav > header {
-    text-align: center;
-    padding: 10px;
-    background-color: #880000; /* 深色红 */
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 10px;
 }
 
 nav ul {
@@ -80,7 +67,7 @@ section {
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 80px; /* 留出空间给大标题和导航栏 */
+    margin-top: 120px; /* 留出空间给大标题和导航栏 */
 }
 
 table {
@@ -129,10 +116,6 @@ citation {
         height: auto;
     }
 
-    nav > header {
-        text-align: left;
-    }
-
     nav ul {
         flex-direction: column;
         align-items: center;
@@ -144,6 +127,6 @@ citation {
 
     section {
         margin-left: 0;
-        margin-top: 60px; /* 调整为适应小屏幕 */
+        margin-top: 120px; /* 调整为适应小屏幕 */
     }
 }
