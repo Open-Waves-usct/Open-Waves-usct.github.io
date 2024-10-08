@@ -1,11 +1,13 @@
+/* 将此CSS文件包含在每个HTML文件中 */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
 nav {
-    background-color: #333;
+    background-color: #cc0000; /* 北大红 */
     color: #fff;
     display: flex;
     justify-content: center;
@@ -27,15 +29,23 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
     color: #ddd;
 }
 
+nav ul li a.active {
+    color: #ffff00; /* 导航高亮颜色 */
+}
+
 section {
     padding: 20px;
-    border-bottom: 1px solid #eee;
+    margin: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 table {
@@ -54,9 +64,35 @@ th, td {
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #e7e7e7;
 }
 
 tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f2f2f2;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+
+    section {
+        margin: 10px;
+    }
 }
