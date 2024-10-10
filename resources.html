@@ -61,7 +61,53 @@
             </ul>
         </div>
     </section>
-    
+
+<!-- 联系表单 -->
+<!-- 联系表单 -->
+    <section id="contact-form">
+        <h2>Contact Us</h2>
+        <form action="form-handler.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="affiliation">Institutional Affiliation:</label>
+            <input type="text" id="affiliation" name="affiliation" required><br>
+
+            <label for="purpose">Purpose of Use:</label>
+            <textarea id="purpose" name="purpose" rows="4" required></textarea><br>
+
+            <div class="agree-container">
+                <input type="checkbox" id="data-agree" name="data-agree" required>
+                <label for="data-agree">
+                    I agree to the 
+                    <a href="#data-sharing-agreement">Data Sharing Agreement</a>.
+                </label>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <!-- Data Sharing Agreement Content -->
+    <section id="data-sharing-agreement">
+        <h2>Data Sharing Agreement</h2>
+        <p>
+            <strong>1. Data Usage:</strong> The data provided may only be used for internal research or educational purposes.
+            Redistribution of the data is not allowed without prior permission.
+        </p>
+        <p>
+            <strong>2. Publication:</strong> Any publications resulting from the use of this data must acknowledge the source.
+        </p>
+        <p>
+            <strong>3. Confidentiality:</strong> Recipients must ensure that the data are kept secure and are not accessed by unauthorized persons.
+        </p>
+        <!-- Add more terms as needed -->
+        <a href="#contact-form">Back to Form</a>
+    </section>
+        
     <citation>
         <p>Citation: "OpenWaves: A Large-Scale Anatomically Realistic Ultrasound-CT Dataset for Benchmarking Neural Wave Equation Solvers." Submitted to ICLR 2025.</p>
     </citation>
