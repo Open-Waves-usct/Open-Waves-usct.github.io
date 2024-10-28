@@ -21,7 +21,19 @@
     
     <section id="datasets">
         <h2>Datasets</h2>
-        <table>
+        <p>OpenWaves includes 8,000 breast phantoms designed to represent the distribution of diverse human
+            breast types in the population. As shown in <a href="#dataset.img">Figure</a> below, the dataset is divided into four groups, each
+            corresponding to a specific breast density type: heterogeneous (HET), fibroglandular (FIB), all
+            fatty (FAT), and extremely dense (EXD). The wavefields are simulated using parameters from a real
+            annular USCT system, which consists of 256 transducers arranged in a 220 mm diameter ring. The
+            system operates at frequencies (ω/2π) ranging from 300 kHz to 1500 kHz, corresponding to acoustic
+            wavelengths between 1 mm and 5 mm. In our simulations, we focus on 8 frequencies between 300
+            kHz and 650 kHz, sampled at 50 kHz intervals, resulting in ROIs with approximately 50 to 100
+            wavenumbers. For each breast phantom, wavefields are simulated by activating each transducer at all
+            frequencies, generating a total of 8, 000 × 256 × 8 = 16, 384, 000 data entries. Detailed statistics
+            are summarized in <a href="#dataset.table">Table</a> below
+        </p>
+        <table id="dataset.table">
             <thead>
                 <tr>
                     <th>Breast Type</th>
@@ -62,10 +74,11 @@
                 </tr>
             </tbody>
         </table>
+        <img id="dataset.img" src="image\dataset.png" alt="OpenWaves Dataset" style="display: block; margin-left: auto; margin-right: auto; width: 60%;">
     </section>
     
     <citation>
-        <p>Citation: "OpenWaves: A Large-Scale Anatomically Realistic Ultrasound-CT Dataset for Benchmarking Neural Wave Equation Solvers." Submitted to ICLR 2025.</p>
+        <p>Citation: "OpenWaves: A Large-Scale Anatomically Realistic Ultrasound-CT Dataset for Benchmarking Neural Wave Equation Solvers."</p>
     </citation>
     
     <script src="js/script.js"></script>

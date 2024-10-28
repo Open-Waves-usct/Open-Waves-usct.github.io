@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources - OpenWaves</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="header-container">
@@ -24,7 +26,8 @@
         <div class="resource-section">
             <h3>Dataset Downloads</h3>
             <ul>
-                <li><a href="#">OpenWaves Complete Dataset</a> - Download the full dataset for comprehensive analysis.</li>
+                <li>The application process includes acceptance of the <a href="#data-sharing-agreement">OPENWAVES DATASET SHARING AGREEMENT</a> and submission of an <a href="#contact-form">APPLICATION FORM</a>. The application must include the investigator's institutional affiliation and the proposed uses of the data. OpenWaves data may be used for internal research or educational purposes only as described in the data use agreement and may not be redistributed in any way without prior permission.
+                    Read and agree to the data use agreement below to apply for access.</li>
             </ul>
         </div>
 
@@ -36,7 +39,14 @@
         </div>
 
         <div class="resource-section">
-            <h3>Baseline Models</h3>
+            <h3>Baseline Trained Models</h3>
+            <ul>
+                <li><a href="#">models</a></li>
+            </ul>
+        </div>
+
+        <!-- <div class="resource-section">
+            <h3>Baseline Trained Models</h3>
             <h4>Forward Simulation</h4>
             <ul>
                 <li><a href="#">UNet Model</a> </li>
@@ -51,21 +61,13 @@
                 <li><a href="#">InversionNet</a> </li>
                 <li><a href="#">DeepONet</a> </li>
             </ul>
-        </div>
-
-        <div class="resource-section">
-            <h3>Contact Us</h3>
-            <ul>
-                <li><a href="mailto:openwaves@pku.edu.cn">Email Us</a> - For general questions and feedback.</li>
-                <li><a href="#">Join Our Community</a> - Participate in forums and discussions for further collaboration and inquiries.</li>
-            </ul>
-        </div>
+        </div> -->
     </section>
 
 <!-- 联系表单 -->
 <!-- 联系表单 -->
     <section id="contact-form">
-        <h2>Contact Us</h2>
+        <h2>Application Form</h2>
         <form action="form-handler.php" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br>
@@ -83,7 +85,7 @@
                 <input type="checkbox" id="data-agree" name="data-agree" required>
                 <label for="data-agree">
                     I agree to the 
-                    <a href="#data-sharing-agreement">Data Sharing Agreement</a>.
+                    <a href="#data-sharing-agreement">OPENWAVES DATASET SHARING AGREEMENT</a>.
                 </label>
             </div>
 
@@ -93,25 +95,65 @@
 
     <!-- Data Sharing Agreement Content -->
     <section id="data-sharing-agreement">
-        <h2>Data Sharing Agreement</h2>
+        <h2>OPENWAVES DATASET SHARING AGREEMENT</h2>
         <p>
-            <strong>1. Data Usage:</strong> The data provided may only be used for internal research or educational purposes.
-            Redistribution of the data is not allowed without prior permission.
+        By registering for access to the OpenWaves Dataset, I agree to the following terms and conditions, which govern the use of the OpenWaves Dataset (the "Dataset") provided by Peking University ("PKU"). The Dataset is considered proprietary to and owned by PKU. Other than the rights granted herein, PKU retains all rights, title, and interest in the Dataset.
         </p>
         <p>
-            <strong>2. Publication:</strong> Any publications resulting from the use of this data must acknowledge the source.
+            <strong>1. Data Usage:</strong> The data provided may only be used for internal research or educational purposes. Redistribution of the data is not allowed without prior permission.
         </p>
         <p>
-            <strong>3. Confidentiality:</strong> Recipients must ensure that the data are kept secure and are not accessed by unauthorized persons.
+            <strong>2. No Redistribution:</strong> I will NOT SHARE THE DOWNLOAD LINK to the Dataset with others. If another user within my organization or elsewhere wishes to obtain a copy of and use the Dataset, they must register as an individual user and comply with all the terms of this Agreement.
         </p>
-        <!-- Add more terms as needed -->
+        <p>
+            <strong>3. Compliance with Laws:</strong> I will use the Dataset in compliance with all laws, governmental regulations, and guidelines, including obtaining all approvals for the proposed use of the Dataset to comply with policies and regulations of all levels of gorvenment.
+        </p>
+        <p>
+            <strong>4. No Commercial Use:</strong> I will NOT SELL OR OTHERWISE MONETIZE any portion or all of the Dataset.
+        </p>
+        <p>
+            <strong>5. No Distribution or Transfer:</strong> I will NOT DISTRIBUTE, PUBLISH, REPRODUCE, RETRANSMIT, COMMERCIALLY EXPLOIT, COPY OR OTHERWISE TRANSFER any portion or all of the Dataset or any subsequent variables or data files derived from the Dataset to any person or entity.
+        </p>
+        <p>
+            <strong>6. Security and Confidentiality:</strong> I will maintain the security and confidentiality of the Dataset and use appropriate safeguards to prevent any unauthorized use or disclosure of the Dataset.
+        </p>
+        <p>
+            <strong>7. Citation and Acknowledgment:</strong> I agree that all publications and presentations resulting from any use of the Dataset must cite the use of the Dataset as follows: 
+        </p>
+        <p class="indented">
+            (a) In any published abstract, I will cite "OpenWaves" as the source of the data in the abstract. 
+        </p>
+        <p class="indented">
+            (b) In any published manuscripts using data from OpenWaves, I will reference the corresponding paper submitted to ICLR 2025 and any associated arXiv paper.
+        </p>   
+        <p>
+            <strong>8. Non-Clinical Use:</strong> The Dataset has not been reviewed or approved by any regulatory body, and is not provided for clinical use. In no event shall any data or images in the Dataset or generated through the use of the Dataset be used or relied upon in the diagnosis or provision of patient care.
+        </p>
+        <p>
+            <strong>9. Reporting Requirements:</strong> I will report to PKU any use or disclosure of the Dataset that is not permitted by this Agreement or required by law within 5 business days of becoming aware of such use or disclosure.
+        </p>
+        <p>
+            <strong>10. Termination and Destruction:</strong> When I have completed my work using the Dataset, I will destroy all copies of the Dataset and retain no copies thereof. I understand that failure to abide by the terms of this Agreement will result in immediate termination of use as well as privileges to access the Dataset. In the event that PKU determines that I have violated this Agreement or other impermissible use has been made, PKU may direct that I immediately destroy all copies of the Dataset and retain no copies thereof even if I did not cause the violation or impermissible use.
+        </p>
+        <p>
+            <strong>11. No Warranty:</strong> The Dataset is provided "as is". PKU MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING ANY WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE OR OF NONINFRINGEMENT, AND HEREBY DISCLAIMS THE SAME.
+        </p>
+        <p>
+            <strong>12. Limitation of Liability:</strong> IN NO EVENT SHALL PKU, OR PKU PARTNERS BE LIABLE FOR ANY USE BY ME OF THE DATASET RESULTING IN ANY LOSS, CLAIM, DAMAGE OR LIABILITY, OF WHATSOEVER KIND OR NATURE, WHICH MAY ARISE FROM OR IN CONNECTION WITH THIS AGREEMENT OR THE USE, HANDLING OR STORAGE OF THE DATASET.
+        </p>
+        <p>
+            <strong>13. Indemnification:</strong> I agree to indemnify, defend, and hold PKU and its affiliates and affiliated hospitals, and each of their trustees, directors, officers, representatives, partners, faculty, students, volunteers, employees, or agents (each, a "PKU Indemnitee") harmless from any claims, losses or damages, including legal fees, arising out of or resulting from my access to and/or use of the Dataset or any failure to abide by the terms of this Agreement, except to the extent caused by a PKU Indemnitee.
+        </p>
+        <p>
+            <strong>14. Governing Law:</strong> This Agreement shall be governed by and interpreted in accordance with the laws of the People's Republic of China. The exclusive venue for any dispute relating to this Agreement shall be in the courts within Beijing, China.
+        </p>
         <a href="#contact-form">Back to Form</a>
     </section>
         
     <citation>
-        <p>Citation: "OpenWaves: A Large-Scale Anatomically Realistic Ultrasound-CT Dataset for Benchmarking Neural Wave Equation Solvers." Submitted to ICLR 2025.</p>
+        <p>Citation: "OpenWaves: A Large-Scale Anatomically Realistic Ultrasound-CT Dataset for Benchmarking Neural Wave Equation Solvers." </p>
     </citation>
     
-    <script src="js/script.js"></script>
+
 </body>
 </html>
