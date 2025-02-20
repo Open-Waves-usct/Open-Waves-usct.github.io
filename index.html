@@ -19,7 +19,7 @@
         </ul>
     </nav>
     
-    <section id = "challenge" class="challenge_section">
+    <section id="challenge" class="challenge_section">
         <h1>⚡New USCT Wave Speed Reconstruction Challenge 2024⚡</h1>
         <p>Please consider participating in the challenge. More information can be found at <a href="https://bohrium.dp.tech/competitions/2522351329?tab=introduce">AI4S CUP</a></p>
     </section>
@@ -29,13 +29,65 @@
         <p>We present <strong>OpenWaves</strong>, a large-scale wave equation dataset designed to bridge the
             gap between theoretical equations and practical imaging applications. OpenWaves
             provides over 16 million frequency-domain wave simulations using real USCT (Ultrasound-CT)
-            configurations, featuring anatomically realistic human breast phantoms across four
-            categories as figure below. It enables comprehensive benchmarking of popular neural operators
+            configurations, featuring anatomically realistic human phantoms across <strong>breast</strong>,
+            <strong>limb</strong>, and <strong>arm</strong> organs. It enables comprehensive benchmarking of popular neural operators
             for both forward simulation and inverse imaging tasks, allowing analysis of their
             performance, scalability, and generalization capabilities. By offering a realistic
             and extensive dataset, OpenWaves not only serves as a platform for developing
             innovative neural PDE solvers but also facilitates their deployment in real-world
             medical imaging problems.</p>
+
+        <!-- 新增器官介绍部分 -->
+        <div class="organ-section">
+            <h2>Featured Anatomical Phantoms</h2>
+            
+            <!-- Breast -->
+            <div class="organ-card">
+                <h3>Breast Dataset</h3>
+                <ul>
+                    <li><strong>Scale</strong>: 8,000 anatomically realistic phantoms</li>
+                    <li><strong>Density Types</strong>: Heterogeneous (HET), Fibroglandular (FIB), All Fatty (FAT), Extremely Dense (EXD)</li>
+                    <li><strong>Applications</strong>: Breast cancer screening, tissue characterization, and USCT system validation</li>
+                    <li><strong>Data Generation</strong>: Combines 3D VICTRE models and stable diffusion-generated samples</li>
+                </ul>
+                <a href="datasets.html#breast-section" class="learn-more-btn">View Breast Dataset Details →</a>
+            </div>
+
+            <!-- Limb -->
+            <div class="organ-card">
+                <h3>Limb Dataset</h3>
+                <ul>
+                    <li><strong>Scale</strong>: 7,000 high-fidelity limb phantoms</li>
+                    <li><strong>Key Features</strong>: 
+                        <ul>
+                            <li>Replicates skin, muscle, and bone structures from X-ray CT</li>
+                            <li>Includes strong scattering samples for robust model training</li>
+                        </ul>
+                    </li>
+                    <li><strong>Applications</strong>: Limb trauma analysis, orthopedic imaging, and scattering pattern studies</li>
+                    <li><strong>Data Generation</strong>: Enhanced CBS iterations for computational accuracy</li>
+                </ul>
+                <a href="datasets.html#limb-section" class="learn-more-btn">View Limb Dataset Details →</a>
+            </div>
+
+            <!-- Arm -->
+            <div class="organ-card">
+                <h3>Arm Dataset</h3>
+                <ul>
+                    <li><strong>Scale</strong>: 7,000 detailed arm phantoms</li>
+                    <li><strong>Key Features</strong>: 
+                        <ul>
+                            <li>Smaller bone cavities compared to limb phantoms</li>
+                            <li>Optimized for mixed training with limb datasets</li>
+                        </ul>
+                    </li>
+                    <li><strong>Applications</strong>: Vascular imaging, scatterer dimension analysis, and transducer generalization studies</li>
+                    <li><strong>Technical Innovation</strong>: Shared transducer configurations with limb models for cross-validation</li>
+                </ul>
+                <a href="datasets.html#arm-section" class="learn-more-btn">View Arm Dataset Details →</a>
+            </div>
+        </div>
+
         <img id="usct.img" src="image\USCT.png" alt="OpenWaves Dataset" style="display: block; margin-left: auto; margin-right: auto; width: 60%;">
     </section>
     

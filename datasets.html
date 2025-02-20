@@ -19,64 +19,146 @@
         </ul>
     </nav>
     
+    <!-- 在页面顶部添加快速导航 -->
+
+
     <section id="datasets">
         <h2>Datasets</h2>
-        <p>OpenWaves includes 8,000 breast phantoms designed to represent the distribution of diverse human
-            breast types in the population. As shown in <a href="#dataset.img">Figure</a> below, the dataset is divided into four groups, each
-            corresponding to a specific breast density type: heterogeneous (HET), fibroglandular (FIB), all
-            fatty (FAT), and extremely dense (EXD). The wavefields are simulated using parameters from a real
-            annular USCT system, which consists of 256 transducers arranged in a 220 mm diameter ring. The
-            system operates at frequencies (ω/2π) ranging from 300 kHz to 1500 kHz, corresponding to acoustic
-            wavelengths between 1 mm and 5 mm. In our simulations, we focus on 8 frequencies between 300
-            kHz and 650 kHz, sampled at 50 kHz intervals, resulting in ROIs with approximately 50 to 100
-            wavenumbers. For each breast phantom, wavefields are simulated by activating each transducer at all
-            frequencies, generating a total of 8, 000 × 256 × 8 = 16, 384, 000 data entries. Detailed statistics
-            are summarized in <a href="#dataset.table">Table</a> below
-        </p>
-        <table id="dataset.table">
-            <thead>
-                <tr>
-                    <th>Breast Type</th>
-                    <th>Frequency (kHz)</th>
-                    <th>#Train/#Test</th>
-                    <th># Source</th>
-                    <th>Storage</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Heterogeneous (HET)</td>
-                    <td>300~650</td>
-                    <td>900/100</td>
-                    <td>256</td>
-                    <td>3.6TB</td>
-                </tr>
-                <tr>
-                    <td>Fibroglandular (FIB)</td>
-                    <td>300~650</td>
-                    <td>2700/300</td>
-                    <td>256</td>
-                    <td>10.8TB</td>
-                </tr>
-                <tr>
-                    <td>Fatty (FAT)</td>
-                    <td>300~650</td>
-                    <td>1800/200</td>
-                    <td>256</td>
-                    <td>7.2TB</td>
-                </tr>
-                <tr>
-                    <td>Extremely dense (EXD)</td>
-                    <td>300~650</td>
-                    <td>1800/200</td>
-                    <td>256</td>
-                    <td>7.2TB</td>
-                </tr>
-            </tbody>
-        </table>
-        <img id="dataset.img" src="image\dataset.png" alt="OpenWaves Dataset" style="display: block; margin-left: auto; margin-right: auto; width: 60%;">
+
+        <div class="quick-nav">
+            <a href="#breast-table">Breast</a> | 
+            <a href="#limb-table">Limb</a> | 
+            <a href="#arm-table">Arm</a>
+        </div>
+
+        <!-- Breast Dataset Section -->
+        <div class="dataset-section">
+            <h3>Breast Dataset</h3>
+            <p>OpenWaves includes 8,000 breast phantoms designed to represent the distribution of diverse human breast types. As shown in <a href="#breast-table">Table 1</a>, the dataset is divided into four density categories:</p>
+            <ul>
+                <li><strong>Heterogeneous (HET)</strong>: Complex tissue composition</li>
+                <li><strong>Fibroglandular (FIB)</strong>: Dense fibrous tissue</li>
+                <li><strong>All Fatty (FAT)</strong>: Predominantly adipose tissue</li>
+                <li><strong>Extremely Dense (EXD)</strong>: High glandular density</li>
+            </ul>
+            
+            <table id= "breast-table" class="dataset-table">
+                <thead>
+                    <tr>
+                        <th>Breast Type</th>
+                        <th>Frequency (kHz)</th>
+                        <th>#Train/#Test</th>
+                        <th># Source</th>
+                        <th>Storage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Heterogeneous (HET)</td>
+                        <td>300~650</td>
+                        <td>900/100</td>
+                        <td>256</td>
+                        <td>3.6TB</td>
+                    </tr>
+                    <tr>
+                        <td>Fibroglandular (FIB)</td>
+                        <td>300~650</td>
+                        <td>2700/300</td>
+                        <td>256</td>
+                        <td>10.8TB</td>
+                    </tr>
+                    <tr>
+                        <td>Fatty (FAT)</td>
+                        <td>300~650</td>
+                        <td>1800/200</td>
+                        <td>256</td>
+                        <td>7.2TB</td>
+                    </tr>
+                    <tr>
+                        <td>Extremely dense (EXD)</td>
+                        <td>300~650</td>
+                        <td>1800/200</td>
+                        <td>256</td>
+                        <td>7.2TB</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Limb Dataset Section -->
+        <div class="dataset-section">
+            <h3>Limb Dataset</h3>
+            <p>Our 7,000 limb phantoms capture detailed anatomical structures as shown in <a href="#limb-table">Table 2</a>, featuring:</p>
+            <ul>
+                <li>Three-layer tissue modeling (skin, muscle, bone)</li>
+                <li>Strong scattering characteristics</li>
+                <li>Enhanced CBS iterations for accuracy</li>
+            </ul>
+            
+            <table id= "limb-table" class="dataset-table">
+                <thead>
+                    <tr>
+                        <th>Data Source</th>
+                        <th># Phantoms</th>
+                        <th>Storage</th>
+                        <th>Generation Method</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>X-ray CT Conversion</td>
+                        <td>3,500</td>
+                        <td>7.1TB</td>
+                        <td>Medical imaging conversion</td>
+                    </tr>
+                    <tr>
+                        <td>Stable Diffusion</td>
+                        <td>3,500</td>
+                        <td>7.1TB</td>
+                        <td>AI-generated</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Arm Dataset Section -->
+        <div class="dataset-section">
+            <h3>Arm Dataset</h3>
+            <p>The 7,000 arm phantoms (<a href="#arm-img">Table</a>) provide:</p>
+            <ul>
+                <li>Smaller bone cavity structures</li>
+                <li>Mixed training compatibility with limb data</li>
+                <li>Diverse transducer configurations</li>
+            </ul>
+            
+            <table id= "arm-table"class="dataset-table">
+                <thead>
+                    <tr>
+                        <th>Data Source</th>
+                        <th># Phantoms</th>
+                        <th>Storage</th>
+                        <th>Generation Method</th>
+                        <th>Key Features</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>X-ray CT Conversion</td>
+                        <td>3,500</td>
+                        <td>6.8TB</td>
+                        <td>Medical imaging conversion</td>
+                    </tr>
+                    <tr>
+                        <td>Stable Diffusion</td>
+                        <td>3,500</td>
+                        <td>6.8TB</td>
+                        <td>AI-generated</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
-    
+
     <citation>
         <p>Citation: "OpenWaves: A Large-Scale Anatomically Realistic Ultrasound-CT Dataset for Benchmarking Neural Wave Equation Solvers."</p>
     </citation>
