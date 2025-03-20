@@ -1,144 +1,89 @@
-// 处理导航栏高亮显示当前页面的情况
-document.addEventListener("DOMContentLoaded", function() {
-    const links = document.querySelectorAll('nav ul li a');
-    const currentPage = window.location.pathname.split('/').pop();
-    const currentHref = `./${currentPage}`;
-
-    links.forEach(link => {
-        if (link.href === currentHref) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// 假设表格的id为"myTable"
-const table_f = document.getElementById('forwardsimulation');
-
-// 获取表格的所有行
-const rows_f = table_f.getElementsByTagName('tr');
-
-// 创建一个数组来存储每一列的最小值和第二小的值
-const minValue = [];
-const secondMinValue = [];
-
-// 遍历每一列
-for (let col = 1; col < 9; col++) {
-    let min = Infinity;
-    let secondMin = Infinity;
-
-    // 遍历每一行，找到最小值和第二小的值
-    for (let row = 2; row < rows_f.length; row++) {
-        const value = parseFloat(rows_f[row].cells[col].textContent);
-        if (!isNaN(value)) {
-            if (value < min) {
-                secondMin = min;
-                min = value;
-            } else if (value < secondMin && value !== min) {
-                secondMin = value;
-            }
-        }
-    }
-
-    minValue[col] = min;
-    secondMinValue[col] = secondMin;
-}
-
-// 再次遍历每一列，对最小值加粗，第二小的值加下划线
-for (let col = 1; col < 9; col++) {
-    for (let row = 2; row < rows_f.length; row++) {
-        const cell = rows_f[row].cells[col];
-        const value = parseFloat(cell.textContent);
-        if (!isNaN(value)) {
-            if (value === minValue[col]) {
-                cell.innerHTML = `<strong>${value}</strong>`;
-            } else if (value === secondMinValue[col]) {
-                cell.innerHTML = `<u>${value}</u>`;
-            }
-        }
-    }
-}
-
-// 假设表格的id为"myTable"
-
-    // const inverseimagingTable = document.getElementById('inverseimaging');
-    // if (inverseimagingTable) {
-    //     const inverseimagingTbody = inverseimagingTable.querySelector('tbody');
-    //     Array.from(inverseimagingTbody.rows).forEach(row => {
-    //         const cells = Array.from(row.cells);
-    //         cells.forEach((cell, index) => {
-    //             const allCellsInColumn = Array.from(inverseimagingTbody.rows).map(row => row.cells[index]);
-    //             const maxValue = Math.max(...allCellsInColumn.map(c => parseFloat(c.innerText)));
-    //             const secondMaxValue = Math.max(...allCellsInColumn.filter(c => parseFloat(c.innerText) !== maxValue).map(c => parseFloat(c.innerText)));
-    
-    //             if (parseFloat(cell.innerText) === maxValue) {
-    //                 cell.classList.add('bold');
-    //             }
-    //             if (parseFloat(cell.innerText) === secondMaxValue) {
-    //                 cell.classList.add('underline');
-    //             }
-    //         });
-    //     });
-    // }
-    
-    // 对 forwardsimulation 每一列的最小值加粗，对每一列的第二小的值加下划线
-    // const forwardsimulationTable = document.getElementById('forwardsimulation');
-    // if (forwardsimulationTable) {
-    //     const forwardsimulationTbody = forwardsimulationTable.querySelector('tbody');
-    //     Array.from(forwardsimulationTbody.rows).forEach(row => {
-    //         const cells = Array.from(row.cells);
-    //         cells.forEach((cell, index) => {
-    //             const allCellsInColumn = Array.from(forwardsimulationTbody.rows).map(row => row.cells[index]);
-    //             const minValue = Math.min(...allCellsInColumn.map(c => parseFloat(c.innerText)));
-    //             const secondMinValue = Math.min(...allCellsInColumn.filter(c => parseFloat(c.innerText) !== minValue).map(c => parseFloat(c.innerText)));
-    
-    //             if (parseFloat(cell.innerText) === minValue) {
-    //                 cell.classList.add('bold');
-    //             }
-    //             if (parseFloat(cell.innerText) === secondMinValue) {
-    //                 cell.classList.add('underline');
-    //             }
-    //         });
-    //     });
-    // }
-
-
-// document.addEventListener("DOMContentLoaded", function() {
-//     const form = document.querySelector('#contact-form form');
-
-//     form.onsubmit = function(event) {
-//         event.preventDefault();
-//         // 表单验证和数据处理逻辑
-//         alert('Form submitted!');
-//     };
-// });
-
-// formHandler.js
-
+// js/script.js
 $(document).ready(function() {
-    $("#contact-form").submit(function(event) {
-        event.preventDefault(); // 阻止表单默认提交行为
+    // 基准测试标签切换
+    $('.tab-btn').on('click', function() {
+        // 移除所有激活状态
+        $('.tab-btn').removeClass('active');
+        $('.tab-pane').removeClass('active');
+        
+        // 设置当前激活状态
+        const tabId = $(this).data('tab');
+        $(this).addClass('active');
+        $('#' + tabId).addClass('active');
+    });
 
-        var formData = $(this).serialize(); // 获取表单数据
-
-        $.ajax({
-            type: "POST",
-            url: "https://your-server-url.com/form-handler.php", // 替换为你的服务器URL
-            data: formData,
-            success: function(response) {
-                alert("表单提交成功！"); // 提交成功后的提示
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                alert("表单提交失败：" + textStatus + " " + errorThrown); // 提交失败后的提示
-            }
-        });
+    // 数据集标签切换
+    $('.dataset-tab').on('click', function(e) {
+        e.preventDefault();
+        // 移除所有激活状态
+        $('.dataset-tab').removeClass('active');
+        $('.dataset-pane').removeClass('active');
+        
+        // 设置当前激活状态
+        const target = $(this).attr('href');
+        $(this).addClass('active');
+        $(target).addClass('active');
     });
 });
 
-// 平滑滚动到目标表格
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+// 在js/script.js中添加
+// URL哈希记忆功能
+function handleHashChange() {
+    const hash = window.location.hash;
+    if (hash) {
+        const $tab = $(`[href="${hash}"]`);
+        if ($tab.length) {
+            $tab.trigger('click');
+        }
+    }
+}
+
+// 初始化时检查哈希
+handleHashChange();
+
+// 监听哈希变化
+$(window).on('hashchange', handleHashChange);
+
+// 添加导航栏激活状态控制
+function updateNavHighlight() {
+    const scrollPos = $(window).scrollTop();
+    const navLinks = $('.sticky-nav a');
+    
+    // 移除所有激活状态
+    navLinks.removeClass('active');
+    
+    // 根据滚动位置判断激活状态
+    $('section').each(function() {
+        const sectionTop = $(this).offset().top - 100;
+        const sectionBottom = sectionTop + $(this).outerHeight();
+        const sectionId = $(this).attr('id');
+
+        if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+            $(`.sticky-nav a[href="#${sectionId}"]`).addClass('active');
+        }
+    });
+}
+
+// 初始化事件监听
+$(document).ready(function() {
+    // 页面加载时检测
+    updateNavHighlight();
+    
+    // 滚动事件监听
+    $(window).scroll(_.throttle(updateNavHighlight, 100));
+    
+    // 导航点击事件
+    $('.sticky-nav a').on('click', function(e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const target = $(this).attr('href');
+        
+        // 更新激活状态
+        $('.sticky-nav a').removeClass('active');
+        $(this).addClass('active');
+        
+        // 平滑滚动到目标位置
+        $('html, body').animate({
+            scrollTop: $(target).offset().top - 80
+        }, 800);
     });
 });
