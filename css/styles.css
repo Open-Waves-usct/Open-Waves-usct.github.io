@@ -607,3 +607,309 @@ figcaption {
         justify-content: center;
     }
 }
+
+#activity {
+    margin: 40px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+  }
+  
+  .competition-card {
+    display: flex;
+    gap: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .competition-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .competition-content {
+    flex: 1;
+  }
+  
+  .en-title {
+    display: block;
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 8px;
+  }
+  
+  .competition-description {
+    color: #495057;
+    line-height: 1.8;
+    margin: 20px 0;
+  }
+  
+  .competition-link {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #2185d5;
+    color: white !important;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  .competition-link:hover {
+    background: #1a6ca8;
+  }
+  
+  .competition-visual {
+    flex: 0 0 40%;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .competition-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+    .competition-card {
+      flex-direction: column;
+      padding: 20px;
+    }
+    
+    .competition-visual {
+      flex: none;
+      height: 200px;
+    }
+  }
+
+/* Base Styles */
+.resource-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* 流程竖线修正 */
+.process-flow {
+    position: relative;
+    padding-left: 40px;
+}
+
+/* 贯穿竖线 */
+.process-flow::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 0.5em;
+    bottom: 0.5em;
+    width: 2px;
+    background: #2185d5;
+    z-index: 0;
+}
+
+.flow-step {
+    position: relative;
+    padding: 20px 0;
+    margin-left: 10px;
+}
+
+.step-icon {
+    position: absolute;
+    left: -40px;
+    top: 20px;
+    width: 32px;
+    height: 32px;
+    background: #2185d5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    z-index: 1; /* 确保图标在竖线上方 */
+}
+
+/* 移除旧版边框 */
+.flow-step {
+    border-left: none !important;
+}
+
+.process-flow {
+    list-style: none; /* 禁用默认序号 */
+    padding-left: 0;
+    counter-reset: step-counter; /* 创建自定义计数器 */
+}
+
+.flow-step::before {
+    content: counter(step-counter); /* 使用伪元素显示序号 */
+    counter-increment: step-counter;
+    position: absolute;
+    left: -46px;
+    top: 20px;
+    width: 32px;
+    height: 32px;
+    background: #2185d5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* 移除旧的step-icon */
+.step-icon {
+    display: none !important;
+}
+
+/* 调整步骤内容位置 */
+.step-content {
+    margin-left: 45px; /* 保持与序号对齐 */
+}
+
+.step-icon {
+    position: absolute;
+    left: -46px;
+    top: 20px;
+    width: 32px;
+    height: 32px;
+    background: #2185d5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.step-content {
+    background: #fff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.sub-flow {
+    padding: 10px 0;
+}
+
+.sub-step {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    color: #495057;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #2185d5;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.file-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.arrow {
+    fill: #2185d5;
+    opacity: 0.8;
+}
+
+/* Requirements Section */
+.spec-chart {
+    display: grid;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    gap: 15px;
+}
+
+.spec-icon {
+    font-size: 1.4em;
+}
+
+.highlight {
+    background: #e3f2fd;
+    border: 1px solid #bbdefb;
+}
+
+.timeline-flow {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.timeline-step {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    flex: 1;
+}
+
+.node {
+    width: 36px;
+    height: 36px;
+    background: #2185d5;
+    color: white;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    position: relative;
+}
+
+/* 桌面端水平连接线 */
+.timeline-flow::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    width: calc(100% - 72px);
+    height: 2px;
+    background: #dee2e6;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .resource-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .process-flow {
+        padding-left: 30px;
+    }
+    
+    .timeline-flow {
+        grid-template-columns: 1fr;
+    }
+    
+    .node:after {
+        width: 2px;
+        height: 15px;
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+    }
+}

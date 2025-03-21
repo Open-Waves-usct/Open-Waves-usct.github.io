@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenWaves | Complete Platform</title>
+    <title>OpenWaves | Large-Scale  USCT Dataset for Neural Wave Equation Solvers</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -22,7 +22,7 @@
         <ul>
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#datasets">Datasets</a></li>
-            <li><a href="#benchmark">Benchmark</a></li>
+            <li><a href="#activity">Activities</a></li>
             <li><a href="#resources">Resources</a></li>
         </ul>
     </nav>
@@ -30,12 +30,6 @@
     <main class="container">
         <!-- 首页 -->
         <section id="home" class="card">
-            <div class="challenge-banner">
-                <h2>⚡ New USCT Wave Speed Reconstruction Challenge 2024 ⚡</h2>
-                <p>Please consider participating in the challenge. More information can be found at 
-                    <a href="https://bohrium.dp.tech/competitions/2522351329?tab=introduce" class="cta-button">AI4S CUP</a>
-                </p>
-            </div>
 
             <article class="intro">
                 <h2>Welcome to OpenWaves</h2>
@@ -57,7 +51,7 @@
                             </li>
                             <li><strong>Applications</strong>: Breast cancer screening, tissue characterization</li>
                         </ul>
-                        <img src="image/breast-sample.png" alt="Breast Sample" class="organ-img">
+                        <img src="image/breast-sample.jpg" alt="Breast Sample" class="organ-img">
                     </div>
 
                     <!-- 四肢数据集 -->
@@ -97,7 +91,7 @@
 
                 <figure class="key-visual">
                     <img src="image/USCT.png" alt="USCT Framework">
-                    <figcaption>Ultrasound Computed Tomography Simulation Framework</figcaption>
+                    <figcaption>Ultrasound Computed Tomography Equipment</figcaption>
                 </figure>
             </article>
         </section>
@@ -221,196 +215,152 @@
             </div>
         </section>
 
-        <!-- 基准测试 -->
-        <section id="benchmark" class="card">
-            <h2>Performance Benchmark</h2>
+        <section id="activity" class="card">
+            <h2>Featured Challenge</h2>
             
-            <!-- 正向模拟表格 -->
-            <div class="benchmark-section">
-                <h3>Forward Simulation Results</h3>
-                <table class="performance-table">
-                    <thead>
-                        <tr>
-                            <th rowspan="2">Model</th>
-                            <th colspan="2">300 kHz</th>
-                            <th colspan="2">400 kHz</th>
-                            <th colspan="2">500 kHz</th>
-                            <th colspan="2">600 kHz</th>
-                        </tr>
-                        <tr>
-                            <th>RRMSE↓</th>
-                            <th>Max Error↓</th>
-                            <th>RRMSE↓</th>
-                            <th>Max Error↓</th>
-                            <th>RRMSE↓</th>
-                            <th>Max Error↓</th>
-                            <th>RRMSE↓</th>
-                            <th>Max Error↓</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><b>UNet</b></td>
-                            <td>0.1236</td>
-                            <td>0.2551</td>
-                            <td>0.1503</td>
-                            <td>0.3017</td>
-                            <td>0.1798</td>
-                            <td>0.3571</td>
-                            <td>0.1969</td>
-                            <td>0.3882</td>
-                        </tr>
-                        <tr>
-                            <td><b>FNO</b></td>
-                            <td>0.0269</td>
-                            <td>0.0617</td>
-                            <td>0.0426</td>
-                            <td>0.1172</td>
-                            <td>0.0490</td>
-                            <td>0.1432</td>
-                            <td>0.0644</td>
-                            <td>0.2007</td>
-                        </tr>
-                        <tr>
-                            <td><b>AFNO</b></td>
-                            <td>0.0165</td>
-                            <td>0.0293</td>
-                            <td>0.0242</td>
-                            <td>0.0464</td>
-                            <td>0.0276</td>
-                            <td>0.0639</td>
-                            <td>0.0383</td>
-                            <td>0.0931</td>
-                        </tr>
-                        <tr>
-                            <td><b>BFNO</b></td>
-                            <td>0.0113</td>
-                            <td>0.0519</td>
-                            <td>0.0148</td>
-                            <td>0.0840</td>
-                            <td>0.0209</td>
-                            <td>0.0838</td>
-                            <td>0.0285</td>
-                            <td>0.1249</td>
-                        </tr>
-                        <tr>
-                            <td><b>MgNO</b></td>
-                            <td>0.0028</td>
-                            <td>0.0092</td>
-                            <td>0.0036</td>
-                            <td>0.0178</td>
-                            <td>0.0049</td>
-                            <td>0.0262</td>
-                            <td>0.0092</td>
-                            <td>0.0524</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="competition-list">
+              <!-- 新增竞赛条目 -->
+              <div class="competition-card">
+                <div class="competition-content">
+                  <h3>Ultrasonic Field Prediction in USCT Imaging
+                  </h3>
+                  <p class="competition-description">
+                    Employ deep learning neural networks to accelerate the numerical solving of wave equation-based partial 
+                    differential equations, aiming to reduce computational costs while maintaining accuracy.
+                  </p>
+                  <a href="https://bohrium.dp.tech/competitions/2512153120?tab=introduce" 
+                     target="_blank" 
+                     rel="noopener noreferrer" 
+                     class="competition-link">
+                    Join Now →
+                  </a>
+                </div>
+                <div class="competition-visual">
+                  <img src="image/challenge1.png" 
+                       class="competition-image">
+                </div>
+              </div>
+              <div class="competition-card">
+                <div class="competition-content">
+                  <h3>Wave Velocity Reconstruction in USCT Imaging
+                  </h3>
+                  <p class="competition-description">
+                    Train neural networks to directly model the inversion process, inferring the velocity distribution of 
+                    target objects from wavefield observation data, 
+                    thereby enabling fast and accurate ultrasound CT image reconstruction
+                  </p>
+                  <a href="https://bohrium.dp.tech/competitions/2512153120?tab=introduce" 
+                     target="_blank" 
+                     rel="noopener noreferrer" 
+                     class="competition-link">
+                    Join Now →
+                  </a>
+                </div>
+                <div class="competition-visual">
+                  <img src="image/challenge2.png" 
+                       class="competition-image">
+                </div>
+              </div>
             </div>
-        
-            <!-- 逆向成像表格 -->
-            <div class="benchmark-section">
-                <h3>Inverse Imaging Results</h3>
-                <table class="performance-table">
-                    <thead>
-                        <tr>
-                            <th colspan="2">Model</th>
-                            <th>PSNR↑</th>
-                            <th>SSIM↑</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="2"><b>DeepONet</b></td>
-                            <td>16.65</td>
-                            <td>0.8572</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><b>InversionNet</b></td>
-                            <td>20.26</td>
-                            <td>0.8640</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><b>NIO</b></td>
-                            <td>18.06</td>
-                            <td>0.8692</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="5"><b>Gradient-based <br> Optimization </b></td>
-                            <td> <b>UNet</b> </td>
-                            <td>20.02</td>
-                            <td>0.8674</td>
-                        </tr>
-                        <tr>
-                            <td><b>FNO</b></td>
-                            <td>25.84</td>
-                            <td>0.9104</td>
-                        </tr>
-                            <td><b>AFNO</b> </td>
-                            <td>24.85</td>
-                            <td>0.8506</td>
-                        </tr>
-                        <tr>
-                            <td> <b>BFNO</b> </td>
-                            <td><u>27.91</u></td>
-                            <td><u>0.9193</u></td>
-                        </tr>
-                        <tr>
-                            <td> <b>MgNO</b> </td>
-                            <td><b>30.48</b></td>
-                            <td><b>0.9381</b></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+          </section
 
         <!-- 资源部分 -->
         <section id="resources" class="card">
             <h2>Resources & Tools</h2>
             <div class="resource-grid">
+                <!-- Left Column -->
                 <div class="download-guide">
                     <h3>Data Access Process</h3>
-                    <ol class="step-list">
-                        <li>
-                            <strong>Sample Data</strong>
-                            <p>Download 500kHz sample from <a href="https://huggingface.co/OpenWaves">HuggingFace</a></p>
+                    <ol class="process-flow">
+                        <li class="flow-step">
+                            <div class="step-icon">①</div>
+                            <div class="step-content">
+                                <strong>Sample Data</strong>
+                                <p>Download sample data from 
+                                    <a href="https://huggingface.co/OpenWaves" class="link-icon">
+                                        <img src="https://img.icons8.com/ios-glyphs/30/2185d5/external-link.png" alt="external link" class="ext-icon">
+                                        HuggingFace
+                                    </a>
+                                </p>
+                            </div>
                         </li>
-                        <li>
-                            <strong>Speed Data</strong>
-                            <p>Download <code>train_speed.mat</code> and <code>test_speed.mat</code></p>
+                        <li class="flow-step">
+                            <div class="step-icon">②</div>
+                            <div class="step-content">
+                                <strong>Speed Data</strong>
+                                <p class="file-group">
+                                    Download <code class="file-code">train_speed.mat</code> and <code class="file-code">test_speed.mat</code>
+                                </p>
+                            </div>
                         </li>
-                        <li>
-                            <strong>Full Generation</strong>
-                            <ol type="a">
-                                <li>Install OpenWavesInstaller.zip</li>
-                                <li>Generate 250-700 kHz data</li>
-                                <li>Validate with sample data</li>
-                            </ol>
+                        <li class="flow-step">
+                            <div class="step-icon">③</div>
+                            <div class="step-content">
+                                <strong>Full Generation</strong>
+                                <div class="sub-flow">
+                                    <div class="sub-step">
+                                        <span class="dot"></span>
+                                        Install OpenWavesInstaller.zip</code>
+                                    </div>
+                                    <div class="sub-step">
+                                        <span class="dot"></span>
+                                        Input the path to speed data and Generate data at frequency you want.
+                                    </div>
+                                    <div class="sub-step">
+                                        <span class="dot"></span>
+                                        Validate with sample data
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                     </ol>
                 </div>
-
+        
+                <!-- Right Column -->
                 <div class="tool-guide">
-                    <h3>Simulation Toolkit</h3>
-                    <div class="system-req">
-                        <h4>Requirements</h4>
-                        <ul>
-                            <li>MATLAB ≥2020b</li>
-                            <li>16-core CPU</li>
-                            <li>64GB RAM</li>
-                            <li>NVIDIA GPU (recommended)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="workflow">
-                        <h4>Execution Steps</h4>
-                        <ol>
-                            <li>Configure organ type (breast/limb/arm)</li>
-                            <li>Set output directories</li>
-                            <li>Select CPU cores (default: 40)</li>
-                            <li>Run simulation (3-5 hours per phantom)</li>
-                        </ol>
+                    <div class="requirements-card">
+                        <h3>OpenWaves Tool-guide</h3>
+                        <div class="spec-grid">
+                            <div class="system-req">
+                                <h4>Requirements</h4>
+                                <div class="spec-chart">
+                                    <div class="spec-item">
+                                        <div class="spec-icon">🖥️</div>
+                                        <div>16-core CPU</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-icon">🧠</div>
+                                        <div>64GB RAM</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-icon">🎮</div>
+                                        <div>NVIDIA GPU</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="workflow">
+                                <h4>Execution Steps</h4>
+                                <div class="timeline-flow">
+                                    <div class="timeline-step">
+                                        <div class="node">1</div>
+                                        <div class="step-desc">Configure organ type</div>
+                                    </div>
+                                    <div class="timeline-step">
+                                        <div class="node">2</div>
+                                        <div class="step-desc">Select path to speed and set output directories</div>
+                                    </div>
+                                    <div class="timeline-step">
+                                        <div class="node">3</div>
+                                        <div class="step-desc">Select CPU cores</div>
+                                    </div>
+                                    <div class="timeline-step">
+                                        <div class="node">4</div>
+                                        <div class="step-desc">Run simulation</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -433,7 +383,7 @@
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="#datasets"><i class="fas fa-database"></i> Datasets</a></li>
-                        <li><a href="#benchmark"><i class="fas fa-chart-bar"></i> Benchmarks</a></li>
+                        <li><a href="#activity"><i class="fas fa-activity"></i> Activities</a></li>
                         <li><a href="#resources"><i class="fas fa-tools"></i> Tools</a></li>
                     </ul>
                 </div>
