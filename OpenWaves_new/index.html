@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenWaves | Large-Scale  USCT Dataset for Neural Wave Equation Solvers</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- 页头 -->
+    <div class="header-container">
+        <div class="header-image"></div>
+        <header>
+            <h1>OpenWaves</h1>
+            <p>A Large-Scale Anatomically Realistic Ultrasound-CT Dataset for Benchmarking Neural Wave Equation Solvers</p>
+        </header>
+    </div>
+
+    <!-- 导航 -->
+    <nav class="sticky-nav">
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#datasets">Datasets</a></li>
+            <li><a href="#activity">Activities</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <!-- 首页 -->
+        <section id="home" class="card">
+
+            <article class="intro">
+                <h2>Welcome to OpenWaves</h2>
+                <p>We present <strong>OpenWaves</strong>, a large-scale wave equation dataset designed to bridge the gap between theoretical equations and practical imaging applications. OpenWaves provides over 16 million frequency-domain wave simulations using real USCT (Ultrasound-CT) configurations, featuring anatomically realistic human phantoms across <strong>breast</strong>, <strong>limb</strong>, and <strong>arm</strong> organs.</p>
+
+                <div class="organ-grid">
+                    <!-- 乳房数据集 -->
+                    <div class="organ-card">
+                        <h3>Breast Dataset</h3>
+                        <ul>
+                            <li><strong>Scale</strong>: 8,000 anatomically realistic phantoms</li>
+                            <li><strong>Density Types</strong>: 
+                                <ul class="sub-list">
+                                    <li>Heterogeneous (HET)</li>
+                                    <li>Fibroglandular (FIB)</li>
+                                    <li>All Fatty (FAT)</li>
+                                    <li>Extremely Dense (EXD)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Applications</strong>: Breast cancer screening, tissue characterization</li>
+                        </ul>
+                        <img src="image/breast-sample.jpg" alt="Breast Sample" class="organ-img">
+                    </div>
+
+                    <!-- 四肢数据集 -->
+                    <div class="organ-card">
+                        <h3>Limb Dataset</h3>
+                        <ul>
+                            <li><strong>Scale</strong>: 7,000 high-fidelity phantoms</li>
+                            <li><strong>Key Features</strong>: 
+                                <ul class="sub-list">
+                                    <li>Three-layer tissue modeling</li>
+                                    <li>Strong scattering characteristics</li>
+                                    <li>Enhanced CBS iterations</li>
+                                </ul>
+                            </li>
+                            <li><strong>Applications</strong>: Orthopedic imaging, trauma analysis</li>
+                        </ul>
+                        <img src="image/limb-sample.png" alt="Limb Sample" class="organ-img">
+                    </div>
+
+                    <!-- 手臂数据集 -->
+                    <div class="organ-card">
+                        <h3>Arm Dataset</h3>
+                        <ul>
+                            <li><strong>Scale</strong>: 7,000 detailed phantoms</li>
+                            <li><strong>Key Features</strong>: 
+                                <ul class="sub-list">
+                                    <li>Smaller bone cavities</li>
+                                    <li>Mixed training compatibility</li>
+                                    <li>Diverse transducers</li>
+                                </ul>
+                            </li>
+                            <li><strong>Applications</strong>: Vascular imaging, scatter analysis</li>
+                        </ul>
+                        <img src="image/arm-sample.png" alt="Arm Sample" class="organ-img">
+                    </div>
+                </div>
+
+                <figure class="key-visual">
+                    <img src="image/USCT.png" alt="USCT Framework">
+                    <figcaption>Ultrasound Computed Tomography Equipment</figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <!-- 数据集详情 -->
+        <section id="datasets" class="card">
+            <h2>Dataset Specifications</h2>
+            <div class="dataset-nav">
+                <a href="#breast-data" class="dataset-tab active">Breast</a>
+                <a href="#limb-data" class="dataset-tab">Limb</a>
+                <a href="#arm-data" class="dataset-tab">Arm</a>
+            </div>
+
+            <div class="dataset-content">
+                <!-- 乳房数据集表格 -->
+                <div id="breast-data" class="dataset-pane active">
+                    <h3>Breast Dataset Details</h3>
+                    <table class="spec-table">
+                        <thead>
+                            <tr>
+                                <th>Breast Type</th>
+                                <th>Frequency (kHz)</th>
+                                <th>Train/Test</th>
+                                <th>Sources</th>
+                                <th>Storage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Heterogeneous (HET)</td>
+                                <td>300-650</td>
+                                <td>900/100</td>
+                                <td>256</td>
+                                <td>3.6TB</td>
+                            </tr>
+                            <tr>
+                                <td>Fibroglandular (FIB)</td>
+                                <td>300-650</td>
+                                <td>2700/300</td>
+                                <td>256</td>
+                                <td>10.8TB</td>
+                            </tr>
+                            <tr>
+                                <td>Fatty (FAT)</td>
+                                <td>300-650</td>
+                                <td>1800/200</td>
+                                <td>256</td>
+                                <td>7.2TB</td>
+                            </tr>
+                            <tr>
+                                <td>Extremely Dense (EXD)</td>
+                                <td>300-650</td>
+                                <td>1800/200</td>
+                                <td>256</td>
+                                <td>7.2TB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 四肢数据集表格 -->
+                <div id="limb-data" class="dataset-pane">
+                    <h3>Limb Dataset Details</h3>
+                    <table class="spec-table">
+                        <thead>
+                            <tr>
+                                <th>Data Source</th>
+                                <th>Phantoms</th>
+                                <th>Storage</th>
+                                <th>Generation Method</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>X-ray CT Conversion</td>
+                                <td>3,500</td>
+                                <td>7.1TB</td>
+                                <td>Medical imaging conversion</td>
+                            </tr>
+                            <tr>
+                                <td>Stable Diffusion</td>
+                                <td>3,500</td>
+                                <td>7.1TB</td>
+                                <td>AI-generated</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 手臂数据集表格 -->
+                <div id="arm-data" class="dataset-pane">
+                    <h3>Arm Dataset Details</h3>
+                    <table class="spec-table">
+                        <thead>
+                            <tr>
+                                <th>Data Source</th>
+                                <th>Phantoms</th>
+                                <th>Storage</th>
+                                <th>Generation Method</th>
+                                <th>Key Features</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>X-ray CT Conversion</td>
+                                <td>3,500</td>
+                                <td>6.8TB</td>
+                                <td>Medical imaging conversion</td>
+                                <td>Shared transducers</td>
+                            </tr>
+                            <tr>
+                                <td>Stable Diffusion</td>
+                                <td>3,500</td>
+                                <td>6.8TB</td>
+                                <td>AI-generated</td>
+                                <td>Mixed training</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="activity" class="card">
+            <h2>Featured Challenge</h2>
+            
+            <div class="competition-list">
+              <!-- 新增竞赛条目 -->
+              <div class="competition-card">
+                <div class="competition-content">
+                  <h3>Ultrasonic Field Prediction in USCT Imaging
+                  </h3>
+                  <p class="competition-description">
+                    Employ deep learning neural networks to accelerate the numerical solving of wave equation-based partial 
+                    differential equations, aiming to reduce computational costs while maintaining accuracy.
+                  </p>
+                  <a href="https://bohrium.dp.tech/competitions/2512153120?tab=introduce" 
+                     target="_blank" 
+                     rel="noopener noreferrer" 
+                     class="competition-link">
+                    Join Now →
+                  </a>
+                </div>
+                <div class="competition-visual">
+                  <img src="image/challenge1.png" 
+                       class="competition-image">
+                </div>
+              </div>
+              <div class="competition-card">
+                <div class="competition-content">
+                  <h3>Wave Velocity Reconstruction in USCT Imaging
+                  </h3>
+                  <p class="competition-description">
+                    Train neural networks to directly model the inversion process, inferring the velocity distribution of 
+                    target objects from wavefield observation data, 
+                    thereby enabling fast and accurate ultrasound CT image reconstruction
+                  </p>
+                  <a href="https://bohrium.dp.tech/competitions/2512153120?tab=introduce" 
+                     target="_blank" 
+                     rel="noopener noreferrer" 
+                     class="competition-link">
+                    Join Now →
+                  </a>
+                </div>
+                <div class="competition-visual">
+                  <img src="image/challenge2.png" 
+                       class="competition-image">
+                </div>
+              </div>
+            </div>
+          </section
+
+        <!-- 资源部分 -->
+        <section id="resources" class="card">
+            <h2>Resources & Tools</h2>
+            <div class="resource-grid">
+                <!-- Left Column -->
+                <div class="download-guide">
+                    <h3>Data Access Process</h3>
+                    <ol class="process-flow">
+                        <li class="flow-step">
+                            <div class="step-icon">①</div>
+                            <div class="step-content">
+                                <strong>Sample Data</strong>
+                                <p>Download sample data from 
+                                    <a href="https://huggingface.co/OpenWaves" class="link-icon">
+                                        <img src="https://img.icons8.com/ios-glyphs/30/2185d5/external-link.png" alt="external link" class="ext-icon">
+                                        HuggingFace
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flow-step">
+                            <div class="step-icon">②</div>
+                            <div class="step-content">
+                                <strong>Speed Data</strong>
+                                <p class="file-group">
+                                    Download <code class="file-code">train_speed.mat</code> and <code class="file-code">test_speed.mat</code>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flow-step">
+                            <div class="step-icon">③</div>
+                            <div class="step-content">
+                                <strong>Full Generation</strong>
+                                <div class="sub-flow">
+                                    <div class="sub-step">
+                                        <span class="dot"></span>
+                                        Install OpenWavesInstaller.zip</code>
+                                    </div>
+                                    <div class="sub-step">
+                                        <span class="dot"></span>
+                                        Input the path to speed data and Generate data at frequency you want.
+                                    </div>
+                                    <div class="sub-step">
+                                        <span class="dot"></span>
+                                        Validate with sample data
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+        
+                <!-- Right Column -->
+                <div class="tool-guide">
+                    <div class="requirements-card">
+                        <h3>OpenWaves Tool-guide</h3>
+                        <div class="spec-grid">
+                            <div class="system-req">
+                                <h4>Requirements</h4>
+                                <div class="spec-chart">
+                                    <div class="spec-item">
+                                        <div class="spec-icon">🖥️</div>
+                                        <div>16-core CPU</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-icon">🧠</div>
+                                        <div>64GB RAM</div>
+                                    </div>
+                                    <div class="spec-item">
+                                        <div class="spec-icon">🎮</div>
+                                        <div>NVIDIA GPU</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="workflow">
+                                <h4>Execution Steps</h4>
+                                <div class="timeline-flow">
+                                    <div class="timeline-step">
+                                        <div class="node">1</div>
+                                        <div class="step-desc">Configure organ type</div>
+                                    </div>
+                                    <div class="timeline-step">
+                                        <div class="node">2</div>
+                                        <div class="step-desc">Select path to speed and set output directories</div>
+                                    </div>
+                                    <div class="timeline-step">
+                                        <div class="node">3</div>
+                                        <div class="step-desc">Select CPU cores</div>
+                                    </div>
+                                    <div class="timeline-step">
+                                        <div class="node">4</div>
+                                        <div class="step-desc">Run simulation</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section citation">
+                <h4>Citation</h4>
+                <blockquote>
+                    "OpenWaves: A Large-Scale Anatomically Realistic Ultrasound-CT Dataset 
+                    for Benchmarking Neural Wave Equation Solvers."
+                </blockquote>
+            </div>
+    
+            <div class="footer-section links">
+                <div class="link-group">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#datasets"><i class="fas fa-database"></i> Datasets</a></li>
+                        <li><a href="#activity"><i class="fas fa-activity"></i> Activities</a></li>
+                        <li><a href="#resources"><i class="fas fa-tools"></i> Tools</a></li>
+                    </ul>
+                </div>
+    
+                <div class="link-group">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:hesun@pku.edu.cn"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2024 OpenWaves Consortium. Open-source under MIT License</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!-- 添加 lodash 节流函数 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+</body>
+</html>
+
