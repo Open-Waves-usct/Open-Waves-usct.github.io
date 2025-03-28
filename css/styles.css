@@ -1,4 +1,3 @@
-/* 基础样式 */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -15,6 +14,7 @@ body {
     overflow: hidden;
     background: linear-gradient(135deg, #2c3e50, #3498db); /* 备用背景 */
 }
+
 
 .header-image {
     position: absolute;
@@ -83,7 +83,7 @@ body {
 }
 
 .header-container h1 {
-    font-size: 3.5rem;
+    font-size: 5rem;
     font-weight: 800;
     letter-spacing: 2px;
     margin: 0 0 15px;
@@ -97,7 +97,7 @@ body {
 }
 
 .header-container p {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 300;
     letter-spacing: 0.5px;
     color: rgba(255, 255, 255, 0.9);
@@ -126,17 +126,7 @@ body {
     animation: title-glow 3s ease-in-out infinite;
 }
 
-/* 移动端优化 */
-@media (max-width: 768px) {
-    .header-container h1 {
-        font-size: 2.5rem;
-        letter-spacing: 1px;
-    }
-    
-    .header-container p {
-        font-size: 1.2rem;
-    }
-}
+
 
 /* 添加字体声明 */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
@@ -148,24 +138,6 @@ body {
 }
 
 
-
-/* 移动端优化（保持单行显示） */
-@media (max-width: 768px) {
-    .header-container header {
-        white-space: normal;  /* 允许换行 */
-    }
-    
-    .header-container h1,
-    .header-container p {
-        display: block;
-        margin: 10px 0;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis; /* 过长显示省略号 */
-    }
-}
-
-
 .header-container header {
     display: flex;
     flex-direction: column;
@@ -174,21 +146,7 @@ body {
 }
 
 /* 主标题 */
-.header-container h1 {
-    display: block;
-    white-space: nowrap;
-    margin: 0 0 10px; /* 下边距控制两行间距 */
-    line-height: 1;
-}
 
-/* 副标题 */
-.header-container p {
-    display: block;
-    white-space: nowrap;
-    margin: 0;
-    line-height: 1;
-    font-size: 1.4em; /* 适当缩小副标题字号 */
-}
 
 /* 移动端优化 */
 @media (max-width: 768px) {
@@ -203,17 +161,26 @@ body {
     }
 }
 
-.header-container h1 {
-    font-size: 2.8em;
-    margin: 0;
-    letter-spacing: 1.5px;
+.intro p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin: 1.5em 0;
 }
 
-.header-container p {
-    font-size: 1.2em;
-    opacity: 0.9;
-    margin: 10px 0 0;
+.lab-link {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
+
+.lab-link:hover {
+    color: #3498db;
+    border-bottom-color: transparent;
+}
+
 
 /* 导航 */
 .sticky-nav {
@@ -338,66 +305,40 @@ body {
 
 /* 表格样式 */
 .spec-table {
-    width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
-    overflow-x: auto;
+    width: 100%;
+    border: 1px solid #ddd;  /* 添加表格外边框 */
 }
 
+/* 表头样式 */
 .spec-table th {
-    background: #3498db;
+    text-align: left; /* 强制左对齐 */
+    padding: 15px 20px; /* 调整内边距 */
+    background: #3498db; /* 保持原蓝色背景 */
     color: white;
-    padding: 12px;
-    text-align: left;
-    position: sticky;
-    top: 0;
+    vertical-align: middle; /* 垂直居中 */
 }
 
+
+
+.spec-table tr:nth-child(even) td {
+    background: #f8f9fa;
+}
+/* 数据单元格对齐优化 */
 .spec-table td {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
+    text-align: left;
+    padding: 12px 20px;
+    border-bottom: 1px solid #e9ecef;
 }
 
-.spec-table tr:nth-child(even) {
-    background: #f8f9fa;
-}
-
-/* 移除标签页相关样式 */
-.benchmark-tabs {
-    display: none; /* 隐藏切换按钮 */
-}
-
-/* 基准测试区块样式 */
-.benchmark-section {
-    margin: 30px 0;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.benchmark-section h3 {
+/* 首列特殊处理 */
+.spec-table td:first-child {
+    font-weight: 500;
     color: #2c3e50;
-    border-left: 4px solid #3498db;
-    padding-left: 15px;
-    margin: 0 0 20px;
 }
 
-/* 调整表格间距 */
-.performance-table {
-    margin-top: 15px;
-}
 
-/* 响应式调整 */
-@media (max-width: 768px) {
-    .benchmark-section {
-        padding: 15px;
-    }
-    
-    .benchmark-section h3 {
-        font-size: 1.2rem;
-    }
-}
+
 
 
 
@@ -442,22 +383,27 @@ body {
     max-width: 80%;
     height: auto;
     margin: 0 auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* 移除以下两个属性 */
+    /* border-radius: 8px; */
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+    /* 可选添加以下属性保证无边框 */
+    border: 0;
+    outline: none;
 }
 
 figcaption {
-    margin-top: 15px;
-    font-style: italic;
-    color: #666;
-    font-size: 0.95em;
+    margin: 20px auto 0;
+    font-family: 'Montserrat', sans-serif; /* 使用现代无衬线字体 */
+    font-weight: 500; /* 中等字重 */
+    font-size: 1.1em;
+    color: #2c3e50; /* 使用主标题的深蓝色 */
     text-align: center;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.4;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-top: 15px;
 }
-
 /* 响应式优化 */
 @media (max-width: 768px) {
     .key-visual img {
@@ -471,49 +417,7 @@ figcaption {
 }
 
 /* 页脚主样式 */
-.site-footer {
-    background: linear-gradient(145deg, #2c3e50, #34495e);
-    color: #ecf0f1;
-    padding: 40px 0 20px;
-    margin-top: 60px;
-    position: relative;
-    font-family: 'Segoe UI', sans-serif;
-}
 
-.site-footer::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 0;
-    width: 100%;
-    height: 10px;
-    background: linear-gradient(to right, #3498db, #2980b9);
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 40px;
-    padding: 0 20px;
-}
-
-/* 引用区块 */
-.citation blockquote {
-    font-style: italic;
-    line-height: 1.6;
-    border-left: 3px solid #3498db;
-    padding-left: 20px;
-    margin: 15px 0;
-}
-
-.citation cite {
-    display: block;
-    margin-top: 10px;
-    font-size: 0.9em;
-    color: #bdc3c7;
-}
 
 /* 链接区块 */
 .links {
@@ -911,5 +815,276 @@ figcaption {
         left: 50%;
         top: 100%;
         transform: translateX(-50%);
+    }
+} 
+
+.site-footer {
+    background: #f8f9fa;
+    padding: 30px 20px;
+    margin-top: 60px;
+    border-top: 1px solid #e9ecef;
+}
+
+.citation-footer {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+blockquote {
+    font-style: normal;
+    color: #495057;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 15px;
+}
+
+blockquote::before,
+blockquote::after {
+    content: none; /* 移除默认的引号 */
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 25px 15px;
+    }
+    
+    blockquote {
+        font-size: 1em;
+        line-height: 1.5;
+    }
+}
+#resources.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box; /* 关键修复点1 */
+    overflow: hidden; /* 关键修复点2 */
+}
+/* 紧凑布局样式 */
+.guide-flow {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.guide-step {
+    /* border: 1px solid #e0e0e0; */
+    border-radius: 6px;
+    padding: 18px;
+    margin: 12px 0;
+    box-sizing: border-box;
+    width: 95%; /* 精确补偿 */
+    position: relative;
+}
+
+
+.step-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.step-number {
+    width: 28px;
+    height: 28px;
+    background: #3498db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.download-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.download-btn {
+    /* 基础样式 */
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    
+    /* 渐变背景 */
+    background: #FFD21F;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+    
+    /* 文字样式 */
+    color: black;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+/* 悬停效果 */
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3),
+                0 4px 6px -2px rgba(59, 130, 246, 0.1);
+}
+
+/* 点击动画 */
+.download-btn:active {
+    transform: scale(0.98);
+}
+
+/* 图标动画 */
+.download-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    transition: transform 0.3s ease;
+}
+
+.download-btn:hover .download-icon {
+    transform: translateY(2px);
+}
+.code-snippet {
+    background: #2d3748;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    font-family: monospace;
+}
+
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.spec-item {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.spec-item img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+}
+
+.config-panel {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.config-item {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+/* 输入控件 */
+.organ-select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.path-selector {
+    display: flex;
+    gap: 0.5rem;
+}
+.browse-btn {
+    background: #2185d5;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+/* Unified Input Styles */
+
+
+
+.path-selector {
+    display: flex;
+    gap: 8px;
+}
+
+.browse-btn {
+    background: #2185d5;
+    color: white;
+    padding: 0 16px;
+    border: none;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+/* 三列等宽布局 */
+.trio-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+    margin-right:2rem ;
+}
+
+.param-item {
+    width: 100%;
+    min-height: 80px; /* 统一高度 */
+}
+
+/* 统一输入控件 */
+select, input[type="number"], .path-input {
+    width:260px;
+    padding: 10px 12px;
+    border: 1px solid #2185d5;
+    border-radius: 4px;
+    background: #f8faff;
+}
+
+/* 路径输入特殊处理 */
+.path-input {
+    display: flex;
+    gap: 8px;
+}
+.browse-btn {
+    background: #2185d5;
+    color: white;
+    padding: 0 16px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+/* 响应式适配 */
+@media (max-width: 1200px) {
+    .trio-group {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .param-item {
+        min-height: auto;
     }
 }
