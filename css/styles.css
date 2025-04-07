@@ -1088,3 +1088,40 @@ select, input[type="number"], .path-input {
         min-height: auto;
     }
 }
+
+/* BibTeX 引用区块样式 */
+.bibtex-section {
+    background: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.bibtex-section h3 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.bibtex-code {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    counter-reset: line;
+    font-family: "Consolas", "Monaco", monospace;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.bibtex-code code {
+    display: block;
+    white-space: pre;
+    color: #2c3e50;
+}
+
+/* 代码块关键词高亮 */
+.bibtex-code code .key { color: #d73a49; }       /* 字段名 */
+.bibtex-code code .value { color: #005cc5; }    /* 字段值 */
+.bibtex-code code .punctuation { color: #6a737d; } /* 标点符号 */
