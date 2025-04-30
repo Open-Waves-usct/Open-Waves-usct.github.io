@@ -330,14 +330,17 @@ body {
     padding: 12px 20px;
     border-bottom: 1px solid #e9ecef;
 }
-
-/* 首列特殊处理 */
+/* 
+首列特殊处理 */
 .spec-table td:first-child {
     font-weight: 500;
     color: #2c3e50;
 }
 
-
+#special-cell {
+    font-weight: 500;
+    color: #2c3e50;
+  }
 
 
 
