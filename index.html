@@ -22,8 +22,8 @@
         <ul>
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#datasets">Datasets</a></li>
-            <li><a href="#activity">Challenge</a></li>
             <li><a href="#results">Results</a></li>
+            <li><a href="#activity">Challenge</a></li>
             <li><a href="#resources">Resources</a></li>
             <li><a href="#paper">Paper</a></li>
         </ul>
@@ -43,9 +43,14 @@
                 <img src="image/fig1_method.png" alt="Generative neural physics framework overview">
                 <figcaption><strong>Figure 1.</strong> (a) Illustration of the experimental setup for ultrasound tomography. (b) Schematic overview of the proposed generative neural physics framework. (c) Time-domain amplitude data of multiple receiver channels and single source acquired from an <em>in vivo</em> human leg experiment. (d) Multiple discrete frequency-domain datasets obtained after preprocessing. The color represents the real part of the complex amplitude. (e) Transverse slices from the reconstruction of a female leg produced by the proposed framework. BF, biceps femoris; GSV, great saphenous vein.</figcaption>
             </figure>
+        </section>
+
+        <!-- 数据集 -->
+        <section id="datasets" class="card">
+            <h2>Datasets</h2>
 
             <article class="intro">
-                <h2>Welcome to OpenWaves</h2>
+                <h3>Welcome to OpenWaves</h3>
                 <p><strong>OpenWaves</strong>, a large-scale wave equation dataset designed to bridge the gap between theoretical equations and practical imaging applications.
                 This collection contains over 45 million frequency-domain wave simulations derived from anatomically realistic human phantoms 
                 encompasseing three critical anatomical regions: <strong>breast</strong>, <strong>leg</strong>, <strong>arm</strong>. 
@@ -87,11 +92,8 @@
                     <figcaption class="figcaption-center">Ultrasound Computed Tomography Equipment</figcaption>
                 </figure>
             </article>
-        </section>
 
-        <!-- 数据集详情 -->
-        <section id="datasets" class="card">
-            <h2>Dataset Specifications</h2>
+            <h3>Dataset Specifications</h3>
 
             <div class="dataset-content">
                 <!-- 乳房数据集表格 -->
@@ -225,55 +227,6 @@
             </div>
         </section>
 
-        <section id="activity" class="card">
-            <h2>Featured Challenge</h2>
-            
-            <div class="competition-list">
-              <!-- 新增竞赛条目 -->
-              <div class="competition-card">
-                <div class="competition-content">
-                  <h3>AI4S Cup - Prediction of Wavefield in Ultrasonic Computed Tomography
-                  </h3>
-                  <p class="competition-description">
-                    Use deep learning neural networks to accelerate the calculation of solutions for wave equations, 
-                    aiming to reduce computation time, ensure result accuracy, and achieve efficient ultrasound CT imaging.
-                  </p>
-                  <a href="https://bohrium.dp.tech/competitions/2512153120?tab=introduce" 
-                     target="_blank" 
-                     rel="noopener noreferrer" 
-                     class="competition-link">
-                    Join Now →
-                  </a>
-                </div>
-                <div class="competition-visual">
-                  <img src="image/challenge1.png" 
-                       class="competition-image">
-                </div>
-              </div>
-              <div class="competition-card">
-                <div class="competition-content">
-                  <h3>AI4S Cup - Reconstruction of Wave Velocity in Ultrasonic Computed Tomography
-                  </h3>
-                  <p class="competition-description">
-                    Train neural networks to directly simulate the inversion process, 
-                    enabling the inference of the wave velocity distribution of the observed object directly 
-                    from wavefield observation data.
-                </p>
-                  <a href="https://bohrium.dp.tech/competitions/2522351329?tab=introduce" 
-                     target="_blank" 
-                     rel="noopener noreferrer" 
-                     class="competition-link">
-                    Join Now →
-                  </a>
-                </div>
-                <div class="competition-visual">
-                  <img src="image/challenge2.png" 
-                       class="competition-image">
-                </div>
-              </div>
-            </div>
-        </section>
-
         <section id="results" class="card">
             <h2>Results</h2>
 
@@ -328,6 +281,54 @@
                     </div>
                     <figcaption><strong>Figure 6.</strong> Three-dimensional UT imaging of the arms and legs of a female subject (left) and a male subject (right). Top row: 3D UT reconstructions with color-coded anatomical segmentations. Bottom row: comparisons with MRI, conventional FWI, and DAS across transverse, sagittal, and coronal sections.</figcaption>
                 </figure>
+            </div>
+        </section>
+
+        <section id="activity" class="card">
+            <h2>Featured Challenge</h2>
+            
+            <div class="competition-list">
+              <div class="competition-card">
+                <div class="competition-content">
+                  <h3>AI4S Cup - Prediction of Wavefield in Ultrasonic Computed Tomography
+                  </h3>
+                  <p class="competition-description">
+                    Use deep learning neural networks to accelerate the calculation of solutions for wave equations, 
+                    aiming to reduce computation time, ensure result accuracy, and achieve efficient ultrasound CT imaging.
+                  </p>
+                  <a href="https://bohrium.dp.tech/competitions/2512153120?tab=introduce" 
+                     target="_blank" 
+                     rel="noopener noreferrer" 
+                     class="competition-link">
+                    Join Now →
+                  </a>
+                </div>
+                <div class="competition-visual">
+                  <img src="image/challenge1.png" 
+                       class="competition-image">
+                </div>
+              </div>
+              <div class="competition-card">
+                <div class="competition-content">
+                  <h3>AI4S Cup - Reconstruction of Wave Velocity in Ultrasonic Computed Tomography
+                  </h3>
+                  <p class="competition-description">
+                    Train neural networks to directly simulate the inversion process, 
+                    enabling the inference of the wave velocity distribution of the observed object directly 
+                    from wavefield observation data.
+                </p>
+                  <a href="https://bohrium.dp.tech/competitions/2522351329?tab=introduce" 
+                     target="_blank" 
+                     rel="noopener noreferrer" 
+                     class="competition-link">
+                    Join Now →
+                  </a>
+                </div>
+                <div class="competition-visual">
+                  <img src="image/challenge2.png" 
+                       class="competition-image">
+                </div>
+              </div>
             </div>
         </section>
 
