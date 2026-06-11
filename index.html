@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenWaves | Large-Scale  USCT Dataset for Neural Wave Equation Solvers</title>
+    <title>Ultrasound Tomography of Musculoskeletal Tissues with Generative Neural Physics</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -12,8 +12,8 @@
     <div class="header-container">
         <div class="header-image"></div>
         <header>
-            <h1>OpenWaves</h1>
-            <p>A Large-Scale Anatomically Realistic Ultrasound-CT Dataset <br> for Benchmarking Neural Wave Equation Solvers</p>
+            <h1>Ultrasound Tomography of Musculoskeletal Tissues with Generative Neural Physics</h1>
+            <p>Generative Neural Physics Framework for Fast, High-Fidelity 3D Ultrasound Tomography · ICCP 2026</p>
         </header>
     </div>
 
@@ -22,14 +22,27 @@
         <ul>
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#datasets">Datasets</a></li>
-            <li><a href="#activity">Activities</a></li>
+            <li><a href="#activity">Challenge</a></li>
+            <li><a href="#results">Results</a></li>
             <li><a href="#resources">Resources</a></li>
+            <li><a href="#paper">Paper</a></li>
         </ul>
     </nav>
 
     <main class="container">
         <!-- 首页 -->
         <section id="home" class="card">
+
+            <article class="abstract-section">
+                <h2>Abstract</h2>
+                <p>Ultrasound Tomography (UT) is a radiation-free, high-resolution modality, but remains limited for musculoskeletal imaging due to the high computational cost and instability of full-waveform inversion in strongly scattering media. We propose a generative neural physics framework that couples generative networks with physics-informed neural simulation for fast, high-fidelity 3D UT. By learning a compact surrogate of ultrasonic wave propagation from a limited set of cross-modality images, our method merges the accuracy of wave modeling with the efficiency and stability of deep learning. This enables accurate quantitative imaging of <em>in vivo</em> musculoskeletal tissues, producing spatial maps of acoustic properties beyond reflection-mode images.</p>
+                <p>On synthetic and <em>in vivo</em> data of breasts, arms, and legs, we reconstruct 3D maps of tissue parameters in under ten minutes, with sensitivity to acoustic variations in musculoskeletal tissues and resolution comparable to MRI. By overcoming computational bottlenecks in strongly scattering regimes, this approach demonstrates the feasibility of quantitative UT for musculoskeletal imaging and advances its development toward future routine clinical use.</p>
+            </article>
+
+            <figure class="key-visual framework-figure">
+                <img src="image/fig1_method.png" alt="Generative neural physics framework overview">
+                <figcaption><strong>Figure 1.</strong> (a) Illustration of the experimental setup for ultrasound tomography. (b) Schematic overview of the proposed generative neural physics framework. (c) Time-domain amplitude data of multiple receiver channels and single source acquired from an <em>in vivo</em> human leg experiment. (d) Multiple discrete frequency-domain datasets obtained after preprocessing. The color represents the real part of the complex amplitude. (e) Transverse slices from the reconstruction of a female leg produced by the proposed framework. BF, biceps femoris; GSV, great saphenous vein.</figcaption>
+            </figure>
 
             <article class="intro">
                 <h2>Welcome to OpenWaves</h2>
@@ -71,7 +84,7 @@
 
                 <figure class="key-visual">
                     <img src="image/USCT.png" alt="USCT Framework">
-                    <figcaption>Ultrasound Computed Tomography Equipment</figcaption>
+                    <figcaption class="figcaption-center">Ultrasound Computed Tomography Equipment</figcaption>
                 </figure>
             </article>
         </section>
@@ -259,7 +272,64 @@
                 </div>
               </div>
             </div>
-          </section
+        </section>
+
+        <section id="results" class="card">
+            <h2>Results</h2>
+
+            <div class="results-metrics">
+                <div class="metric-card">
+                    <div class="metric-value">&lt; 10 min</div>
+                    <div class="metric-label">3D UT Reconstruction Time</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">14×</div>
+                    <div class="metric-label">Speedup vs. Conventional FWI</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">~1 mm</div>
+                    <div class="metric-label">Parameter-Free Resolution</div>
+                </div>
+            </div>
+
+            <div class="results-content">
+                <h3>Forward Wave Simulation</h3>
+                <p>We evaluated the accuracy of S²NO in simulating acoustic wavefields for synthetic breast, arm, and leg phantoms. S²NO outperformed FNO, DeepONet, and U-Net, accurately capturing complex scattering patterns at bone-muscle interfaces and within the femoral marrow cavity, while achieving 25–34× speedups over the CBS numerical solver.</p>
+                <figure class="key-visual">
+                    <img src="image/fig3_results.png" alt="S²NO forward wave simulation results">
+                    <figcaption><strong>Figure 3.</strong> (a) Wavefield predictions from S²NO and baseline models for breast, arm, and leg phantoms at 0.6 MHz. (b) Forward simulation errors at 0.6 MHz. (c) Comparison of forward simulation errors across frequencies of 0.25–0.6 MHz.</figcaption>
+                </figure>
+
+                <h3>UT Image Reconstruction</h3>
+                <p>S²NO-based FWI achieved reconstruction quality comparable to CBS and outperformed other neural operators across all phantom types. For arm and leg phantoms with strong scattering, S²NO more accurately modeled multiple scattering phenomena and effectively suppressed scattering-induced artifacts.</p>
+                <figure class="key-visual">
+                    <img src="image/fig4_results.png" alt="UT reconstruction comparison">
+                    <figcaption><strong>Figure 4.</strong> (a) Comparison between reference synthetic phantoms and reconstructions using different models. (b) Statistical summary of SSIM values. (c) Distribution of SSIM differences between S²NO and other methods.</figcaption>
+                </figure>
+
+                <h3><em>In Vivo</em> Breast Imaging</h3>
+                <p>S²NO-based FWI captured detailed breast structures including skin, glandular tissue, tumors, and ductal networks, with parameter-free resolution of approximately 1.36 mm and 6× faster computation than conventional numerical solvers. The method distinguished malignant masses from benign lesions based on boundary morphology and sound speed contrast.</p>
+                <figure class="key-visual">
+                    <img src="image/fig5_results.png" alt="In vivo breast UT results">
+                    <figcaption><strong>Figure 5.</strong> (a–b) Comparison of reconstructions of breasts with a spiculated malignancy and a benign cyst. (c) Schematic of cross-sectional data acquisition. (d–e) One-dimensional velocity profiles. (f) Computational time per iteration for traditional FWI and S²NO-FWI.</figcaption>
+                </figure>
+
+                <h3><em>In Vivo</em> 3D Arm and Leg Imaging</h3>
+                <p>On <em>in vivo</em> arm and leg data from two volunteers, S²NO-FWI reconstructed 11-slice 3D volumes in under 10 minutes, closely matching MRI reference with parameter-free resolutions of 1.09 mm (arm) and 1.30 mm (leg). The method accurately delineated skin, muscle, blood vessels, and bone structures in strongly scattering musculoskeletal tissues.</p>
+                <figure class="key-visual">
+                    <img src="image/fig6_results.png" alt="In vivo 3D arm and leg UT results">
+                    <div class="result-videos">
+                        <video controls loop muted playsinline preload="metadata">
+                            <source src="video/video1.mp4" type="video/mp4">
+                        </video>
+                        <video controls loop muted playsinline preload="metadata">
+                            <source src="video/video2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <figcaption><strong>Figure 6.</strong> Three-dimensional UT imaging of the arms and legs of a female subject (left) and a male subject (right). Top row: 3D UT reconstructions with color-coded anatomical segmentations. Bottom row: comparisons with MRI, conventional FWI, and DAS across transverse, sagittal, and coronal sections.</figcaption>
+                </figure>
+            </div>
+        </section>
 
         <!-- 资源部分 -->
         <section id="resources" class="card">
@@ -396,14 +466,14 @@
 
         </section>
 
-        <section class="bibtex-section">
+        <section id="paper" class="bibtex-section">
             <div class="container">
                 <h3>BibTeX Citation</h3>
-                <pre class="bibtex-code"><code>@misc{zeng2025openwaves,
-title={OpenWaves: A Large-Scale Anatomically Realistic Ultrasound-{CT} Dataset for Benchmarking Neural Wave Equation Solvers},
-author={Zhijun Zeng and Youjia Zheng and Hao Hu and Zeyuan Dong and Yihang Zheng and Xinliang Liu and Jinzhuo Wang and Zuoqiang Shi and Linfeng Zhang and Yubing Li and He Sun},
-year={2025},
-url={https://openreview.net/forum?id=u14Y236LwX}
+                <pre class="bibtex-code"><code>@article{zeng2025generative,
+  title={Generative neural physics enables quantitative volumetric ultrasound of tissue mechanics},
+  author={Zeng, Zhijun and Zheng, Youjia and Su, Chang and Wu, Qianhang and Hu, Hao and Dong, Zeyuan and Gao, Shan and Lv, Yang and Tang, Rui and Cui, Ligang and others},
+  journal={arXiv preprint arXiv:2508.12226},
+  year={2025}
 }</code></pre>
             </div>
         </section>
